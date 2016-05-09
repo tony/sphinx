@@ -219,6 +219,7 @@ class TestApp(application.Sphinx):
             application.Sphinx.__init__(self, srcdir, confdir, outdir, doctreedir,
                                         buildername, confoverrides, status, warning,
                                         freshenv, warningiserror, tags)
+            self._init_builder(self.buildername)
         except:
             self.cleanup()
             raise

@@ -195,8 +195,6 @@ class Sphinx(object):
         self._init_source_parsers()
         # set up the build environment
         self._init_env(freshenv)
-        # set up the builder
-        self._init_builder(self.buildername)
         # set up the enumerable nodes
         self._init_enumerable_nodes()
 
@@ -277,6 +275,8 @@ class Sphinx(object):
     # ---- main "build" method -------------------------------------------------
 
     def build(self, force_all=False, filenames=None):
+        # set up the builder
+        self._init_builder(self.buildername)
         try:
             if force_all:
                 self.builder.compile_all_catalogs()
