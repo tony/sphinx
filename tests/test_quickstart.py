@@ -273,7 +273,7 @@ def test_quickstart_and_build(tempdir):
         'html',  # buildername
         status=StringIO(),
         warning=warnfile)
-    app.builder.build_all()
+    app.build()
     warnings = warnfile.getvalue()
     assert not warnings
 
